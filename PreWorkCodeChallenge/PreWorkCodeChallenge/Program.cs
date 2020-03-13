@@ -6,8 +6,8 @@ namespace PreWorkCodeChallenge
     {
         static void Main(string[] args)
         {
-            arrayMaxResult();
-            //leapYearCalender();
+            //arrayMaxResult();
+            leapYearCalender();
 
         }
 
@@ -52,11 +52,25 @@ namespace PreWorkCodeChallenge
             Console.ReadLine();
         }
 
-        /*
+        
         private static void leapYearCalender()
         {
+            bool cont = true;
+            while (cont)
+            {
+                Console.Write("Enter a year to see if it is a leap year: ");
+                int year = int.Parse(Console.ReadLine());
+                if (DateTime.IsLeapYear(year))
+                {
+                    Console.WriteLine("This is a leap year!");
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, This is not a leap year!");
+                }
+            }
 
         }
-        */
+        
     }
 }
