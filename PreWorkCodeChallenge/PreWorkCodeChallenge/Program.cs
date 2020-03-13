@@ -15,12 +15,11 @@ namespace PreWorkCodeChallenge
         {
 
             int[] numArray = new int[5];
-
             for (int i = 0; i < 5; i++)
             {
                 Console.Write("Guess a number from 1-10: ");
                 int input = int.Parse(Console.ReadLine());
-                while ( input > 10)
+                while (input > 10)
                 {
                     Console.WriteLine("Numbers from 1-10 only please!");
                     input = int.Parse(Console.ReadLine());
@@ -31,21 +30,25 @@ namespace PreWorkCodeChallenge
             Console.WriteLine(string.Join(", ", numArray));
             Console.Write("Pick a number from  list and find out your score: ");
 
+            int picked = 0;
+            int chosen = int.Parse(Console.ReadLine());
+            int checkNum = Array.IndexOf(numArray, chosen);
 
-            for (int i = 0; i < numArray.Length; i++)
+            while (checkNum <= -1)
             {
-                int chosen = int.Parse(Console.ReadLine());
+                Console.WriteLine("Please pick a number from the list");
+                chosen = int.Parse(Console.ReadLine());
+                checkNum = Array.IndexOf(numArray, chosen);
+            }
 
-                if (chosen == numArray[i])
+            foreach (var num in numArray)
+            {
+                if (num == chosen)
                 {
-                    Console.WriteLine("You picked the same numnber");
-
-                }
-                else if (chosen != numArray[i])
-                {
-                    Console.WriteLine("Please pick a number from the list");
+                    picked++;
                 }
             }
+            Console.WriteLine($"Awesome! You picked {chosen} and your score is {chosen * picked}");
             Console.ReadLine();
         }
 
