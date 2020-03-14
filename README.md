@@ -15,3 +15,17 @@
 ### Result
 ![Leap Year Result](leap-year.png)
 
+## Perfect Sequence
+
+**Instructions:** User is instructed to enter a series of numbers using a comma. Then the console notifies user if their numbers are a perfect sequence or not.
+
+### Result
+![Perfect Sequence Result](perfSeq.png)
+
+
+
+
+
+
+
+

@@ -7,7 +7,8 @@ namespace PreWorkCodeChallenge
         static void Main(string[] args)
         {
             //arrayMaxResult();
-            leapYearCalender();
+            //leapYearCalender();
+            perfectSequence();
 
         }
 
@@ -71,6 +72,59 @@ namespace PreWorkCodeChallenge
             }
 
         }
-        
+
+        private static void perfectSequence()
+        {
+
+            bool cont = true;
+
+            while (cont)
+            {
+
+
+                Console.Write("Please write a series of numbers using a comma lets see if it is a perfect sequence!: ");
+                string userInput = Console.ReadLine();
+
+                while (!userInput.Contains(","))
+                {
+                    Console.WriteLine("Please try again using a comma!");
+                    userInput = Console.ReadLine();
+                }
+
+                string[] splitString = userInput.Split(",");
+                int[] numArr = Array.ConvertAll(splitString, item => int.Parse(item));
+
+                int sum = 0;
+                int product = 1;
+
+                foreach (var item in numArr)
+                {
+                    if (item < 0)
+                    {
+                        Console.WriteLine("You entered a negative number, this is not a perfect sequence");
+                    }
+                    else
+                    {
+                        sum += item;
+                        product *= item;
+                    }
+                }
+
+                if (sum == product)
+                {
+                    Console.WriteLine("Yes, do have a perfect sequence! Congrats");
+                }
+                else
+                {
+                    Console.WriteLine("No, sorry this is not a perfect sequence");
+                }
+            }
+
+
+
+            Console.ReadLine();
+        }
+
+
     }
 }
