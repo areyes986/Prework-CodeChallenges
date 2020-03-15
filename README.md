@@ -22,6 +22,15 @@
 ### Result
 ![Perfect Sequence Result](perfSeq.png)
 
+## Sum of Rows
+
+**Instructions:** User is asked how many rows and columns they want and that is inputted into the length of their arrays. The console generates random numbers and adds all the numbers within the row.
+
+### Result
+![Sum of Rows](sum-of-rows.png)
+
+
+
 
 
 
