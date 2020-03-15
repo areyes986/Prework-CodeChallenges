@@ -8,7 +8,8 @@ namespace PreWorkCodeChallenge
         {
             //arrayMaxResult();
             //leapYearCalender();
-            perfectSequence();
+            //perfectSequence();
+            sumOfRows();
 
         }
 
@@ -53,7 +54,6 @@ namespace PreWorkCodeChallenge
             Console.ReadLine();
         }
 
-        
         private static void leapYearCalender()
         {
             bool cont = true;
@@ -68,6 +68,7 @@ namespace PreWorkCodeChallenge
                 else
                 {
                     Console.WriteLine("Sorry, This is not a leap year!");
+                    year = int.Parse(Console.ReadLine());
                 }
             }
 
@@ -125,6 +126,31 @@ namespace PreWorkCodeChallenge
             Console.ReadLine();
         }
 
+        private static void sumOfRows()
+        {
+            Console.Write("How many rows would you like? ");
+            int row = int.Parse(Console.ReadLine());
+            Console.Write("Awesome! Now how many columns? ");
+            int column = int.Parse(Console.ReadLine());
+
+
+            Random randomNums = new Random();
+            int[,] myArray = new int [row, column];
+
+            for (int i = 0; i < myArray.GetLength(0); i++)
+            {
+            int sum = 0;
+                for (int j = 0; j < myArray.GetLength(1); j++)
+                {
+                    myArray[i, j] = randomNums.Next(0, 9);
+                    Console.Write(myArray[i, j]);
+                    sum += myArray[i, j];
+                }
+               
+                Console.WriteLine(": The sum of this row is: " + sum);
+            }
+            Console.ReadLine();
+        }
 
     }
 }
